@@ -1,15 +1,14 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\Models\Reply;
 
-$factory->define(Reply::class, function (Faker $faker) {
+$factory->define(App\Models\Reply::class, function (Faker $faker) {
 
+    // 随机取一个月以内的时间
     $time = $faker->dateTimeThisMonth();
 
-
     return [
-        'content'    => $faker->sentence(),
+        'content' => $faker->sentence(),
         'created_at' => $time,
         'updated_at' => $time,
     ];
